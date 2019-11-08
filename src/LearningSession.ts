@@ -1,10 +1,9 @@
+import { Word } from './Word/Word';
+import { WordRepitionMode } from './enums';
 import {
-    Word,
-    WordRepitionMode,
     WordLearningAttributesIntroducing,
-    WordLearningAttributesRepitition,
-    WordSessionAttributes
-} from './Word';
+    WordLearningAttributesRepitition
+} from './Word/WordLearningAttributes';
 
 function shuffleArray(array: any[], elementsCount: number = array.length): any[] {
     if (elementsCount < 0) {
@@ -39,7 +38,7 @@ class LearningSession {
     private removeWordFromLearnList(word: Word) {
 
     }
-    private getNextIntroducingWord(answerWasCorrect: boolean): Word {
+    private getNextIntroducingWord(answerWasCorrect: boolean): Word | null {
         const wordLearningAttributes = this.currentWord.learningAttributes as WordLearningAttributesIntroducing;
         const wordSessionAttributes = this.currentWord.sessionAttributes;
         if (answerWasCorrect) {
@@ -60,13 +59,28 @@ class LearningSession {
         }
         return this.wordsToLearn.shift() || null;
     }
-    private getNextRepeatingWord(answerWasCorrect: boolean): Word {
-        const wordLearningAttributes = this.currentWord.learningAttributes as WordLearningAttributesIntroducing;
+    private getNextRepeatingWord(answerWasCorrect: boolean): Word | null {
+        const wordLearningAttributes = this.currentWord.learningAttributes as WordLearningAttributesRepitition;
         const wordSessionAttributes = this.currentWord.sessionAttributes;
-        
+        if (answerWasCorrect) {
+            wordLearningAttributes.upgradeRepititionStage();
+            wordSessionAttributes.currectAnswers++;
+            if (wordSessionAttributes.currectAnswers == this.correctAnswersForWordPerSession) {
+                this.removeWordFromLearnList(this.currentWord);
+            }
+            if (!this.wordsToLearn.length) {
+                this.sessionFinishedHandler();
+                return null;
+            }
+        } else {
+            wordSessionAttributes.incorrectAnswers++;
+            if (wordSessionAttributes.incorrectAnswers < this.incorrectAnswersForWordPerSession) {
+                this.wordsToLearn.splice(1, 0, this.currentWord);
+            }
+        }
         return this.wordsToLearn.shift() || null;
     }
-    getNextWord(answerWasCorrect: boolean): Word {
+    getNextWord(answerWasCorrect: boolean): Word | null {
         if (this.mode === WordRepitionMode.Introducing) {
             return this.getNextIntroducingWord(answerWasCorrect);
         } else {
