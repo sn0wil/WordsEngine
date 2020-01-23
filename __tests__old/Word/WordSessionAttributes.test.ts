@@ -1,4 +1,4 @@
-import { WordSessionAttributes } from '../../src/Word/WordSessionAttributes';
+import { WordSessionAttributes } from '../../src_old/Word/WordSessionAttributes';
 
 test('clear should reset currectAnswers and incorrectAnswers values', () => {
     const sessionAttributes = new WordSessionAttributes();

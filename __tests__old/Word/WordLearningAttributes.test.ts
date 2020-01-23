@@ -1,8 +1,8 @@
 import {
     WordLearningAttributesIntroducing,
     WordLearningAttributesRepitition
-} from '../../src/Word/WordLearningAttributes';
-import { RepititionStage } from '../../src/enums';
+} from '../../src_old/Word/WordLearningAttributes';
+import { RepititionStage } from '../../src_old/enums';
 
 describe('WordLearningAttributesIntroducing', () => {
     test('incrementCorrectAnswersCount should increase correctAnswersCount by 1', () => {

@@ -1,4 +1,4 @@
-import { Word } from '../../src/Word/Word';
+import { Word } from '../../src_old/Word/Word';
 
 test('checkWordAnswer(string) should return TRUE with passed CORRECT translation', () => {
     const word = new Word();
