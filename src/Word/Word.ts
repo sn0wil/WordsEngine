@@ -12,7 +12,7 @@ export enum WordType {
  */
 export class Word {
     // General attributes of the word.
-    public id!: string;
+    public id!: number;
     public text!: string;
     public translation!: string;
     public description!: string;
@@ -35,19 +35,19 @@ export class Word {
      */
     checkAnswer(answer: (Word | string)): boolean {
         if (typeof answer === 'string') {
-            return this.text === answer;
+            return this.text === answer || this.translation === answer;
         } else {
             return this.id === answer.id;
         }
     }
 
     /**
-     * @description Self increment of correctness attributes for current word.
+     * @description Self-increment of correctness attributes for current word.
      */
     incrementCorrectCounter(): void {
         if (this.type == WordType.Intro) {
             this.introductionCorrectAnswers ++;
-            //todo: change type
+            //TODO: Change type if correct answers equal or more needed count.
         } else {
             let currentDate = new Date(Date.now());
             currentDate.setDate(currentDate.getDate() + 5);
