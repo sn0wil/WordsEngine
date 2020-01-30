@@ -1,0 +1,54 @@
+[
+    {
+        "id": 0,
+        "text": "Text Cat",
+        "translation": "Tr Cat",
+        "description": "Desc Cat",
+        "transcription": "Transcr Cat",
+        "examples": [
+            "Cat ex1", "Cat ex2"
+        ],
+        "type": 0,
+        "introductionCorrectAnswers": 0,
+        "repeatingExpirationDate": null
+    },
+    {
+        "id": 1,
+        "text": "Text Cat2",
+        "translation": "Tr Cat2",
+        "description": "Desc Cat2",
+        "transcription": "Transcr Cat2",
+        "examples": [
+            "Cat2 ex1", "Cat2 ex2"
+        ],
+        "type": 0,
+        "introductionCorrectAnswers": 0,
+        "repeatingExpirationDate": null
+    },
+    {
+        "id": 2,
+        "text": "Text Cat3",
+        "translation": "Tr Cat3",
+        "description": "Desc Cat3",
+        "transcription": "Transcr Cat3",
+        "examples": [
+            "Cat3 ex1", "Cat3 ex2"
+        ],
+        "type": 0,
+        "introductionCorrectAnswers": 0,
+        "repeatingExpirationDate": null
+    },
+    {
+        "id": 2,
+        "text": "Text Cat4",
+        "translation": "Tr Cat4",
+        "description": "Desc Cat4",
+        "transcription": "Transcr Cat4",
+        "examples": [
+            "Cat4 ex1", "Cat4 ex2"
+        ],
+        "type": 0,
+        "introductionCorrectAnswers": 0,
+        "repeatingExpirationDate": null
+    }
+]

@@ -12,5 +12,9 @@
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "class-transformer": "^0.2.3",
+    "reflect-metadata": "^0.1.13"
   }
 }
