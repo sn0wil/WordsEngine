@@ -21,11 +21,12 @@ export class Queue<T> {
     }
 
     /**
-     * @description Pushes an element into second position. It needs for learning algorithm.
+     * @description Pushes an element into second position as default. It needs for learning algorithm.
      * @param {T} element The element that should be pushed. 
+     * @param {number} position The position to push. 
      */
-    pushSecond(element: T): void {
-        const pushingPosition = this.elements.length < 2 ? 0 : 1;
+    push(element: T, position: number = 1): void {
+        const pushingPosition = this.elements.length < position + 1 ? this.elements.length : position;
         this.elements.splice(pushingPosition, 0, element);
     }
 

@@ -35,6 +35,6 @@ test('pushSecond inserts second element', () => {
     const array = getAnArray();
     const queue = new Queue(array);
     const pushingEl = 'after one';
-    queue.pushSecond(pushingEl);
+    queue.push(pushingEl);
     expect(queue.getItem(1)).toEqual(pushingEl);
 });
