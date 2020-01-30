@@ -1,11 +1,10 @@
-import { Word, WordType } from './Word';
+import { WordType } from './Word';
+import { getTestWords } from '../helpers.js';
+
+const words = getTestWords();
 
 const getTestWord = () => {
-    const testWord = new Word();
-    testWord.id = 1;
-    testWord.translation = 'Translation';
-    testWord.text = 'Text';
-    return testWord;
+    return words[0];
 };
 
 describe('checkAnswer', () => {
