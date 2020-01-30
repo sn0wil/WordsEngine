@@ -1,6 +1,6 @@
 import { plainToClass } from "class-transformer";
 import wordsJson from './words.json';
-import { Word } from './Word/Word.js';
+import { Word } from './Word/Word';
 
 /**
  * @description Returns random value between min and max. Both edges are included.
@@ -16,7 +16,7 @@ export const getRandomNumberFromInterval = (min: number, max: number) => {
 }
 
 /**
- * Returns the progress of elements that left count in comparison with total count. 
+ * @description Returns the progress of elements that left count in comparison with total count. 
  * @param {number} elementsLeft Number of left elements.
  * @param {number} totalElements Total number of elements.
  * @returns {number} The progress in range 1..100.
