@@ -2,14 +2,14 @@
  * @description Basic realisation of queue for session.
  */
 export class Queue<T> {
-    private elements: T[];
+    private _elements: T[];
 
-    public get length() : number {
-        return this.elements.length;
+    public get length(): number {
+        return this._elements.length;
     }
-    
+
     constructor(elements: Array<T>) {
-        this.elements = [...elements];
+        this._elements = [...elements];
     }
 
     /**
@@ -17,7 +17,7 @@ export class Queue<T> {
      * @returns {T|undefined} The first element in queue or undefined value. 
      */
     pop(): T | undefined {
-        return this.elements.shift();
+        return this._elements.shift();
     }
 
     /**
@@ -26,18 +26,22 @@ export class Queue<T> {
      * @param {number} position The position to push. 
      */
     push(element: T, position: number = 1): void {
-        const pushingPosition = this.elements.length < position + 1 ? this.elements.length : position;
-        this.elements.splice(pushingPosition, 0, element);
+        const pushingPosition = this._elements.length < position + 1 ? this._elements.length : position;
+        this._elements.splice(pushingPosition, 0, element);
     }
 
     /**
      * @description Returns element by index. In case of no element by index returns undefined.
      * @param {T|index} index Element from queue by index.
      */
-    getItem(index: number): T|undefined {
-        if (index > this.elements.length + 1) {
+    getItem(index: number): T | undefined {
+        if (index > this._elements.length + 1) {
             return undefined;
         }
-        return this.elements[index];
+        return this._elements[index];
+    }
+
+    getCopy(): Queue<T> {
+        return new Queue<T>(this._elements);
     }
 }

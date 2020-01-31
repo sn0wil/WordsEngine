@@ -11,7 +11,7 @@ describe('pop', () => {
         const firstElement = queue.pop();
         expect(firstElement).toEqual(array[0]);
     });
-    
+
     it('decreases length', () => {
         const array = getAnArray();
         const queue = new Queue(array);
@@ -27,11 +27,11 @@ describe('getItem', () => {
         const index = 1;
         expect(queue.getItem(index)).toEqual(array[index]);
     });
-    
+
     it('returns undefined for index >= length', () => {
         const array = getAnArray();
         const queue = new Queue(array);
-        expect(queue.getItem(array.length)).toEqual(undefined);
+        expect(queue.getItem(array.length)).toBeUndefined();
     });
 });
 
