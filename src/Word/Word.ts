@@ -21,11 +21,11 @@ export class Word {
 
     // Its type.
     public type: WordType = WordType.Intro;
-    
+
     // Atrributes for learning.
     public introductionCorrectAnswers: number = 0;
     public repeatingExpirationDate!: Date | null;
-    
+
     // Session temporary attributes for a word. It will be initialized in a session.
     public sessionAttributes: WordSessionAttributes | undefined;
 
@@ -46,10 +46,10 @@ export class Word {
      */
     incrementCorrectCounter(): void {
         if (this.type == WordType.Intro) {
-            this.introductionCorrectAnswers ++;
+            this.introductionCorrectAnswers++;
             //TODO: Change type if correct answers equal or more needed count.
         } else {
-            let currentDate = new Date(Date.now());
+            const currentDate = new Date(Date.now());
             currentDate.setDate(currentDate.getDate() + 5);
             this.repeatingExpirationDate = currentDate;
         }

@@ -1,5 +1,5 @@
 import { WordType } from './Word';
-import { getTestWords } from '../helpers.js';
+import { getTestWords } from '../helpers';
 
 const words = getTestWords();
 
@@ -10,12 +10,12 @@ const getTestWord = () => {
 describe('checkAnswer', () => {
     it('should return TRUE if words are equal', () => {
         const testWord = getTestWord();
-        expect(testWord.checkAnswer(testWord)).toEqual(true);
+        expect(testWord.checkAnswer(testWord)).toBeTruthy();
     });
     
     it('should return TRUE if answer is correct', () => {
         const testWord = getTestWord();
-        expect(testWord.checkAnswer(testWord.translation)).toEqual(true);
+        expect(testWord.checkAnswer(testWord.translation)).toBeTruthy();
     });
 });
 
