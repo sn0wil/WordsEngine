@@ -5,9 +5,9 @@ import { Excercise } from './Excercise';
  */
 export class SessionResponse {
     constructor(
-        public excercise: Excercise,
+        public sessionProgress: number = 0,
         public wasPrevAnswerCorrect: boolean = false,
-        public sessionProgress: number = 0
+        public excercise: Excercise | undefined = undefined
     ) {
     }
 }
