@@ -8,7 +8,7 @@ import { Word } from './Word/Word';
  * @param {number} max Maximum value for random.
  * @returns {number} Random value.
  */
-export const getRandomNumberFromInterval = (min: number, max: number) => {
+export const getRandomNumberFromInterval = (min: number, max: number): number => {
     if (min > max) {
         [min, max] = [max, min];
     }
@@ -21,7 +21,7 @@ export const getRandomNumberFromInterval = (min: number, max: number) => {
  * @param {number} totalElements Total number of elements.
  * @returns {number} The progress in range 1..100.
  */
-export const getProgress = (elementsLeft: number, totalElements: number) => {
+export const getProgress = (elementsLeft: number, totalElements: number): number => {
     if (elementsLeft === 0 || totalElements === 0) {
         return 100;
     }
@@ -31,4 +31,4 @@ export const getProgress = (elementsLeft: number, totalElements: number) => {
 /**
  * @description Returns an array of test words from words.json.
  */
-export const getTestWords = () => plainToClass(Word, wordsJson);
+export const getTestWords = (): Word[] => plainToClass(Word, wordsJson);

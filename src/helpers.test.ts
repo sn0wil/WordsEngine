@@ -1,4 +1,4 @@
-import { getRandomNumberFromInterval, getProgress } from './helpers';
+import { getRandomNumberFromInterval, getProgress } from './helpers';
 
 describe('getRandomNumberFromInterval', () => {
     it('should return value beetween min and max', () => {
@@ -7,14 +7,14 @@ describe('getRandomNumberFromInterval', () => {
         const randomNumber = getRandomNumberFromInterval(min, max);
         expect(randomNumber <= max && randomNumber >= min).toEqual(true);
     });
-    
+
     it('should return value beetween min+1 and max-1 and not equal min or max', () => {
         const min = 1;
         const max = 10;
         const randomNumber = getRandomNumberFromInterval(min + 1, max - 1);
         expect(randomNumber < max && randomNumber > min).toEqual(true);
     });
-    
+
     it('should change min and max if min > max and return value beetween min and max', () => {
         const min = 10;
         const max = 1;
