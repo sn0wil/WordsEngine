@@ -1,6 +1,6 @@
 import { plainToClass } from "class-transformer";
 import wordsJson from './words.json';
-import { Word } from './Word/Word';
+import { Word } from './entities/word/word';
 
 /**
  * @description Returns random value between min and max. Both edges are included.

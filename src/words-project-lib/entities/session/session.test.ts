@@ -1,8 +1,8 @@
-import { getTestWords } from '../helpers';
-import { Session } from './Session';
-import { WordSessionAttributes } from '../Word/WordSessionAttributes';
-import { WordType, Word } from '../Word/Word';
-import { Excercise } from './Excercise';
+import { getTestWords } from '../../helpers';
+import { Session } from './session';
+import { WordSessionAttributes } from '../word/wordSessionAttributes';
+import { WordType, Word } from '../word/word';
+import { Excercise } from './excercise';
 
 const words = getTestWords();
 

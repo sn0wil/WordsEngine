@@ -1,4 +1,4 @@
-import { Word } from '../Word/Word';
+import { Word } from '../word/word';
 /**
  * The type of excercise.
  */

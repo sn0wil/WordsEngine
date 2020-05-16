@@ -35,7 +35,7 @@ export class Queue<T> {
      * @param {T|index} index Element from queue by index.
      */
     getItem(index: number): T | undefined {
-        if (index > this._elements.length + 1) {
+        if (index >= this._elements.length) {
             return undefined;
         }
         return this._elements[index];

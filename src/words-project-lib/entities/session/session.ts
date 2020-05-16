@@ -1,9 +1,9 @@
-import { Word, WordType } from '../Word/Word';
-import { Excercise } from './Excercise';
-import { SessionResponse } from './SessionResponse';
-import { WordSessionAttributes } from '../Word/WordSessionAttributes';
-import { Queue } from './Queue';
-import { getRandomNumberFromInterval, getProgress } from '../helpers';
+import { Word, WordType } from '../word/word';
+import { Excercise } from './excercise';
+import { SessionResponse } from './sessionResponse';
+import { WordSessionAttributes } from '../word/wordSessionAttributes';
+import { Queue } from './queue';
+import { getRandomNumberFromInterval, getProgress } from '../../helpers';
 /**
  * @description Class for learning session. It works with words and generates new excercises.
  */
@@ -30,7 +30,7 @@ export class Session {
     }
 
     /**
-     * @description Method for generation new excercise in current learning session.
+     * @description Method for generation a new excercise in the current learning session.
      * @param {Word} word The object of word for which needs to generate new Excercise object.
      * @returns {Excercise} New excercise object.
      */

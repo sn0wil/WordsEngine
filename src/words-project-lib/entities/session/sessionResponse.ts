@@ -1,4 +1,4 @@
-import { Excercise } from './Excercise';
+import { Excercise } from './excercise';
 
 /**
  * @description Class of session's reaction on an interaction.

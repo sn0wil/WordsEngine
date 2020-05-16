@@ -1,5 +1,5 @@
-import { WordType } from './Word';
-import { getTestWords } from '../helpers';
+import { WordType } from './word';
+import { getTestWords } from '../../helpers';
 
 const words = getTestWords();
 

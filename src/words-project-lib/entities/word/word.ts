@@ -1,4 +1,4 @@
-import { WordSessionAttributes } from "./WordSessionAttributes";
+import { WordSessionAttributes } from "./wordSessionAttributes";
 /**
  * @description enum for word type. It can be in 2 states: Introduction and Repeating.
  */

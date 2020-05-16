@@ -1,4 +1,4 @@
-import { Queue } from './Queue';
+import { Queue } from './queue';
 
 const getAnArray = () => {
     return ['one', 'two', 'three'];
